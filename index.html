@@ -3,87 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Cavanagh Server Consulting</title>
 
 <style>
 
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Segoe UI, Arial, sans-serif;
+}
+
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0b0b12;
-    color:#e6e6f0;
+background:#0b0b12;
+color:#e6e6f0;
+line-height:1.6;
 }
 
-header{
-    text-align:center;
-    padding:80px 20px;
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#0f0f18;
+border-bottom:1px solid #1f1f2e;
 }
 
-h1{
-    font-size:48px;
-    margin-bottom:10px;
+.logo{
+font-size:20px;
+font-weight:bold;
+color:#8c84ff;
 }
 
-.tagline{
-    color:#a5a5c8;
-    font-size:18px;
+nav a{
+color:#cfcfff;
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
 }
 
-section{
-    max-width:900px;
-    margin:auto;
-    padding:60px 20px;
+/* HERO */
+
+.hero{
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(180deg,#111122,#0b0b12);
 }
 
-.card{
-    background:#13131c;
-    padding:25px;
-    border-radius:10px;
-    margin-bottom:20px;
-    border:1px solid #202033;
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
 }
 
-h2{
-    color:#9a8cff;
-}
-
-.steps{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:20px;
-}
-
-.step{
-    background:#13131c;
-    padding:20px;
-    border-radius:10px;
-    border:1px solid #202033;
-}
-
-.contact{
-    text-align:center;
+.hero p{
+color:#a6a6c8;
+max-width:600px;
+margin:auto;
+margin-bottom:30px;
 }
 
 .button{
-    display:inline-block;
-    padding:12px 24px;
-    background:#5865F2;
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-    margin-top:10px;
+display:inline-block;
+padding:14px 28px;
+background:#5865F2;
+border-radius:8px;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.2s;
 }
 
+.button:hover{
+background:#4752c4;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 10%;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+font-size:32px;
+margin-bottom:20px;
+color:#9a8cff;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.card{
+background:#13131c;
+padding:25px;
+border-radius:10px;
+border:1px solid #202033;
+}
+
+.card h3{
+margin-bottom:10px;
+color:#cfcfff;
+}
+
+/* PROCESS */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.step{
+background:#13131c;
+padding:25px;
+border-radius:10px;
+border:1px solid #202033;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact p{
+margin-bottom:25px;
+color:#a6a6c8;
+}
+
+/* FOOTER */
+
 footer{
-    text-align:center;
-    padding:30px;
-    color:#6a6a8c;
+text-align:center;
+padding:40px;
+border-top:1px solid #1f1f2e;
+color:#7a7aa6;
+margin-top:60px;
 }
 
 @media(max-width:700px){
-    .steps{
-        grid-template-columns:1fr;
-    }
+
+.hero h1{
+font-size:34px;
+}
+
+nav{
+padding:20px;
+}
+
+section{
+padding:60px 20px;
+}
+
 }
 
 </style>
@@ -91,33 +171,74 @@ footer{
 
 <body>
 
-<header>
-<h1>Cavanagh Server Consulting</h1>
-<p class="tagline">Helping Discord communities improve structure, organisation, and growth.</p>
-</header>
+<nav>
+<div class="logo">CSC</div>
+<div>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#process">Process</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 
-<section>
+<div class="hero">
+<h1>Cavanagh Server Consulting</h1>
+<p>
+Helping Discord communities improve structure, organisation, and community experience.
+</p>
+
+<a class="button" href="https://discord.gg/5GxyRnpCbQ">Join My Discord</a>
+</div>
+
+<section id="about">
+
+<h2>About</h2>
+
+<p>
+Hey! My name is Cavanagh. I run a small project where I review Discord servers and provide suggestions to help them run smoother and grow.
+</p>
+
+<p style="margin-top:10px;">
+Each week I review around <strong>3–4 servers</strong> and give clear recommendations for improving structure, organisation, and community flow.
+</p>
+
+<p style="margin-top:10px;">
+Note: I focus on server design and management. I do <strong>not configure bots</strong>.
+</p>
+
+</section>
+
+<section id="services">
+
+<h2>What I Review</h2>
+
+<div class="cards">
 
 <div class="card">
-<h2>About</h2>
-<p>
-Hey! My name is Cavanagh.
-</p>
+<h3>Server Layout</h3>
+<p>Channel structure and category organisation for clarity.</p>
+</div>
 
-<p>
-I'm starting a small project where I help Discord servers improve their setup and organisation.
-I review around <strong>3–4 servers each week</strong> and give suggestions to help them run smoother and grow.
-</p>
+<div class="card">
+<h3>Role Structure</h3>
+<p>Improving role hierarchy and permissions.</p>
+</div>
 
-<p>
-Just to mention, I don't deal with bots — I focus on server layout, structure, and community management.
-</p>
+<div class="card">
+<h3>Community Flow</h3>
+<p>Making servers easier for new members to navigate.</p>
+</div>
+
+<div class="card">
+<h3>Growth Setup</h3>
+<p>Optimising your server layout to support community growth.</p>
+</div>
 
 </div>
 
 </section>
 
-<section>
+<section id="process">
 
 <h2>How Reviews Work</h2>
 
@@ -125,49 +246,36 @@ Just to mention, I don't deal with bots — I focus on server layout, structure,
 
 <div class="step">
 <h3>1. Invite</h3>
-<p>You invite me to your Discord server so I can review the structure.</p>
+<p>You invite me to your Discord server so I can analyse the structure.</p>
 </div>
 
 <div class="step">
 <h3>2. Review</h3>
-<p>I analyse your channel layout, roles, categories, and overall organisation.</p>
+<p>I review channels, roles, categories, and overall organisation.</p>
 </div>
 
 <div class="step">
 <h3>3. Suggestions</h3>
-<p>You receive clear suggestions on how to improve structure and community flow.</p>
+<p>You receive feedback and suggestions to improve your server.</p>
 </div>
 
 </div>
 
 </section>
 
-<section>
-
-<div class="card">
-<h2>What I Focus On</h2>
-
-<ul>
-<li>Server channel layout</li>
-<li>Category organisation</li>
-<li>Role structure</li>
-<li>Community experience</li>
-<li>Growth-friendly server design</li>
-</ul>
-
-<p>Note: I don't configure or manage bots.</p>
-
-</div>
-
-</section>
-
-<section class="contact">
+<section id="contact" class="contact">
 
 <h2>Request a Server Review</h2>
 
-<p>If you'd like your server reviewed, feel free to message me on discord at cavanagh2052 .</p>
+<p>
+If you'd like your server reviewed, join my Discord or message me directly.
+</p>
 
-<a class="button" href="https://discord.gg/5GxyRnpCbQ">Contact on Discord</a>
+<a class="button" href="https://discord.gg/5GxyRnpCbQ">Join the Review Server</a>
+
+<p style="margin-top:20px;">
+Discord: <strong>cavanagh2052</strong>
+</p>
 
 </section>
 
