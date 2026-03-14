@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +10,9 @@
 <style>
 
 *{
-box-sizing:border-box;
 margin:0;
 padding:0;
+box-sizing:border-box;
 font-family:Segoe UI, Arial, sans-serif;
 }
 
@@ -30,18 +31,20 @@ align-items:center;
 padding:20px 10%;
 background:#0f0f18;
 border-bottom:1px solid #1f1f2e;
+position:sticky;
+top:0;
 }
 
 .logo{
-font-size:20px;
 font-weight:bold;
+font-size:20px;
 color:#8c84ff;
 }
 
 nav a{
 color:#cfcfff;
 text-decoration:none;
-margin-left:20px;
+margin-left:25px;
 font-size:14px;
 }
 
@@ -59,9 +62,9 @@ margin-bottom:15px;
 }
 
 .hero p{
-color:#a6a6c8;
-max-width:600px;
+max-width:650px;
 margin:auto;
+color:#a6a6c8;
 margin-bottom:30px;
 }
 
@@ -73,11 +76,6 @@ border-radius:8px;
 text-decoration:none;
 color:white;
 font-weight:600;
-transition:0.2s;
-}
-
-.button:hover{
-background:#4752c4;
 }
 
 /* SECTIONS */
@@ -89,10 +87,12 @@ margin:auto;
 }
 
 h2{
-font-size:32px;
-margin-bottom:20px;
 color:#9a8cff;
+margin-bottom:20px;
+font-size:32px;
 }
+
+/* CARDS */
 
 .cards{
 display:grid;
@@ -110,23 +110,43 @@ border:1px solid #202033;
 
 .card h3{
 margin-bottom:10px;
-color:#cfcfff;
 }
 
-/* PROCESS */
+/* APPLY FORM */
 
-.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.step{
+.apply-box{
+max-width:650px;
+margin:auto;
 background:#13131c;
-padding:25px;
+padding:35px;
 border-radius:10px;
 border:1px solid #202033;
+}
+
+input, textarea, select{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:6px;
+border:none;
+background:#0f0f18;
+color:white;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.submit-btn{
+width:100%;
+background:#5865F2;
+padding:14px;
+border:none;
+border-radius:6px;
+color:white;
+font-size:16px;
+cursor:pointer;
 }
 
 /* CONTACT */
@@ -134,13 +154,6 @@ border:1px solid #202033;
 .contact{
 text-align:center;
 }
-
-.contact p{
-margin-bottom:25px;
-color:#a6a6c8;
-}
-
-/* FOOTER */
 
 footer{
 text-align:center;
@@ -156,10 +169,6 @@ margin-top:60px;
 font-size:34px;
 }
 
-nav{
-padding:20px;
-}
-
 section{
 padding:60px 20px;
 }
@@ -172,22 +181,28 @@ padding:60px 20px;
 <body>
 
 <nav>
+
 <div class="logo">CSC</div>
+
 <div>
 <a href="#about">About</a>
 <a href="#services">Services</a>
-<a href="#process">Process</a>
+<a href="#apply">Apply</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
 
 <div class="hero">
+
 <h1>Cavanagh Server Consulting</h1>
+
 <p>
-Helping Discord communities improve structure, organisation, and community experience.
+Helping Discord communities improve server organisation, structure, and community experience.
 </p>
 
 <a class="button" href="https://discord.gg/5GxyRnpCbQ">Join My Discord</a>
+
 </div>
 
 <section id="about">
@@ -195,11 +210,11 @@ Helping Discord communities improve structure, organisation, and community exper
 <h2>About</h2>
 
 <p>
-Hey! My name is Cavanagh. I run a small project where I review Discord servers and provide suggestions to help them run smoother and grow.
+Hey! My name is Cavanagh. I review Discord servers and provide suggestions to improve structure, organisation, and overall community flow.
 </p>
 
 <p style="margin-top:10px;">
-Each week I review around <strong>3–4 servers</strong> and give clear recommendations for improving structure, organisation, and community flow.
+Each week I review around <strong>3–4 servers</strong> and provide feedback on how to improve their setup.
 </p>
 
 <p style="margin-top:10px;">
@@ -216,7 +231,7 @@ Note: I focus on server design and management. I do <strong>not configure bots</
 
 <div class="card">
 <h3>Server Layout</h3>
-<p>Channel structure and category organisation for clarity.</p>
+<p>Channel and category structure to make servers easy to navigate.</p>
 </div>
 
 <div class="card">
@@ -226,38 +241,56 @@ Note: I focus on server design and management. I do <strong>not configure bots</
 
 <div class="card">
 <h3>Community Flow</h3>
-<p>Making servers easier for new members to navigate.</p>
+<p>Making onboarding and navigation easier for new members.</p>
 </div>
 
 <div class="card">
 <h3>Growth Setup</h3>
-<p>Optimising your server layout to support community growth.</p>
+<p>Helping your server structure support long-term community growth.</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="process">
+<section id="apply">
 
-<h2>How Reviews Work</h2>
+<h2>Apply For a Server Review</h2>
 
-<div class="steps">
+<p style="margin-bottom:30px;">
+I review around 3–4 servers per week. Applications are reviewed in the order they are received.
+</p>
 
-<div class="step">
-<h3>1. Invite</h3>
-<p>You invite me to your Discord server so I can analyse the structure.</p>
-</div>
+<div class="apply-box">
 
-<div class="step">
-<h3>2. Review</h3>
-<p>I review channels, roles, categories, and overall organisation.</p>
-</div>
+<form action="https://formspree.io/f/mbdzkaja" method="POST">
 
-<div class="step">
-<h3>3. Suggestions</h3>
-<p>You receive feedback and suggestions to improve your server.</p>
-</div>
+<input type="text" name="Server Name" placeholder="Server Name" required>
+
+<input type="text" name="Discord Username" placeholder="Your Discord Username" required>
+
+<input type="text" name="Server Invite Link" placeholder="Server Invite Link" required>
+
+<input type="number" name="Server Members" placeholder="Server Member Count">
+
+<select name="Server Type">
+<option value="">Server Type</option>
+<option>Gaming</option>
+<option>Community</option>
+<option>Content Creator</option>
+<option>Business</option>
+<option>Other</option>
+</select>
+
+<textarea name="Server Problems" placeholder="What problems does your server currently have?"></textarea>
+
+<textarea name="Goals" placeholder="What would you like help improving?"></textarea>
+
+<button type="submit" class="submit-btn">
+Submit Application
+</button>
+
+</form>
 
 </div>
 
@@ -265,17 +298,13 @@ Note: I focus on server design and management. I do <strong>not configure bots</
 
 <section id="contact" class="contact">
 
-<h2>Request a Server Review</h2>
+<h2>Contact</h2>
 
-<p>
-If you'd like your server reviewed, join my Discord or message me directly.
-</p>
+<p>Discord: <strong>cavanagh2052</strong></p>
 
-<a class="button" href="https://discord.gg/5GxyRnpCbQ">Join the Review Server</a>
+<br>
 
-<p style="margin-top:20px;">
-Discord: <strong>cavanagh2052</strong>
-</p>
+<a class="button" href="https://discord.gg/5GxyRnpCbQ">Join My Server</a>
 
 </section>
 
@@ -287,3 +316,4 @@ Discord: <strong>cavanagh2052</strong>
 
 </body>
 </html>
+```
