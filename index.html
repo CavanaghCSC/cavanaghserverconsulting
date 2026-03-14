@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Cavanagh Server Consulting</title>
 
 <style>
@@ -13,7 +12,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI, Arial, sans-serif;
+font-family:Segoe UI,Arial,sans-serif;
 }
 
 body{
@@ -28,7 +27,7 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
+padding:18px 10%;
 background:#0f0f18;
 border-bottom:1px solid #1f1f2e;
 position:sticky;
@@ -53,11 +52,11 @@ font-size:14px;
 .hero{
 text-align:center;
 padding:120px 20px;
-background:linear-gradient(180deg,#111122,#0b0b12);
+background:linear-gradient(180deg,#121225,#0b0b12);
 }
 
 .hero h1{
-font-size:48px;
+font-size:50px;
 margin-bottom:15px;
 }
 
@@ -98,7 +97,6 @@ font-size:32px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-margin-top:30px;
 }
 
 .card{
@@ -106,27 +104,47 @@ background:#13131c;
 padding:25px;
 border-radius:10px;
 border:1px solid #202033;
+transition:0.2s;
 }
 
-.card h3{
-margin-bottom:10px;
+.card:hover{
+transform:translateY(-5px);
+border-color:#5865F2;
 }
 
-/* APPLY FORM */
+/* REVIEWS */
+
+.review{
+background:#13131c;
+padding:20px;
+border-radius:10px;
+border:1px solid #202033;
+margin-bottom:15px;
+}
+
+/* FORM */
 
 .apply-box{
 max-width:650px;
 margin:auto;
 background:#13131c;
-padding:35px;
+padding:30px;
 border-radius:10px;
 border:1px solid #202033;
 }
 
-input, textarea, select{
+label{
+display:block;
+margin-top:10px;
+margin-bottom:5px;
+font-size:14px;
+color:#bfbfff;
+}
+
+input,textarea,select{
 width:100%;
 padding:12px;
-margin-bottom:15px;
+margin-bottom:12px;
 border-radius:6px;
 border:none;
 background:#0f0f18;
@@ -135,7 +153,6 @@ color:white;
 
 textarea{
 min-height:120px;
-resize:vertical;
 }
 
 .submit-btn{
@@ -149,11 +166,17 @@ font-size:16px;
 cursor:pointer;
 }
 
-/* CONTACT */
+/* ADMIN PANEL */
 
-.contact{
-text-align:center;
+#privatePanel{
+display:none;
+background:#13131c;
+padding:25px;
+border-radius:10px;
+border:1px solid #202033;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -163,34 +186,21 @@ color:#7a7aa6;
 margin-top:60px;
 }
 
-@media(max-width:700px){
-
-.hero h1{
-font-size:34px;
-}
-
-section{
-padding:60px 20px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <nav>
-
 <div class="logo">CSC</div>
-
 <div>
 <a href="#about">About</a>
 <a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
 <a href="#apply">Apply</a>
+<a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
 </div>
-
 </nav>
 
 <div class="hero">
@@ -210,15 +220,15 @@ Helping Discord communities improve server organisation, structure, and communit
 <h2>About</h2>
 
 <p>
-Hey! My name is Cavanagh. I review Discord servers and provide suggestions to improve structure, organisation, and overall community flow.
+Hey! My name is Cavanagh. I review Discord servers and help improve structure, organisation, and community flow.
 </p>
 
 <p style="margin-top:10px;">
-Each week I review around <strong>3–4 servers</strong> and provide feedback on how to improve their setup.
+I review around <strong>3–4 servers per week</strong> to maintain quality.
 </p>
 
 <p style="margin-top:10px;">
-Note: I focus on server design and management. I do <strong>not configure bots</strong>.
+I focus on server structure and community management. I do <strong>not configure bots</strong>.
 </p>
 
 </section>
@@ -231,22 +241,48 @@ Note: I focus on server design and management. I do <strong>not configure bots</
 
 <div class="card">
 <h3>Server Layout</h3>
-<p>Channel and category structure to make servers easy to navigate.</p>
+<p>Improving channel structure and categories.</p>
 </div>
 
 <div class="card">
-<h3>Role Structure</h3>
-<p>Improving role hierarchy and permissions.</p>
+<h3>Role Hierarchy</h3>
+<p>Organising permissions and roles.</p>
 </div>
 
 <div class="card">
 <h3>Community Flow</h3>
-<p>Making onboarding and navigation easier for new members.</p>
+<p>Making navigation easier for members.</p>
 </div>
 
 <div class="card">
 <h3>Growth Setup</h3>
-<p>Helping your server structure support long-term community growth.</p>
+<p>Helping servers grow with better structure.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<h2>Server Management Plan</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Full Server Management (1 Year)</h3>
+
+<p style="font-size:28px;margin:10px 0;">$120 / year</p>
+
+<p>
+Includes ongoing structure improvements, consulting, and support.
+</p>
+
+<br>
+
+<a class="button" href="#contact">Request Management</a>
+
 </div>
 
 </div>
@@ -257,24 +293,28 @@ Note: I focus on server design and management. I do <strong>not configure bots</
 
 <h2>Apply For a Server Review</h2>
 
-<p style="margin-bottom:30px;">
-I review around 3–4 servers per week. Applications are reviewed in the order they are received.
+<p style="margin-bottom:25px;">
+I review around <strong>3–4 servers each week</strong>. Applications are processed in order.
 </p>
 
 <div class="apply-box">
 
 <form action="https://formspree.io/f/mbdzkaja" method="POST">
 
-<input type="text" name="Server Name" placeholder="Server Name" required>
+<label>Server Name</label>
+<input type="text" name="Server Name" required>
 
-<input type="text" name="Discord Username" placeholder="Your Discord Username" required>
+<label>Your Discord Username</label>
+<input type="text" name="Discord Username" required>
 
-<input type="text" name="Server Invite Link" placeholder="Server Invite Link" required>
+<label>Server Invite Link</label>
+<input type="text" name="Server Invite Link" required>
 
-<input type="number" name="Server Members" placeholder="Server Member Count">
+<label>Member Count</label>
+<input type="number" name="Member Count">
 
+<label>Server Type</label>
 <select name="Server Type">
-<option value="">Server Type</option>
 <option>Gaming</option>
 <option>Community</option>
 <option>Content Creator</option>
@@ -282,11 +322,24 @@ I review around 3–4 servers per week. Applications are reviewed in the order t
 <option>Other</option>
 </select>
 
-<textarea name="Server Problems" placeholder="What problems does your server currently have?"></textarea>
+<label>How active is your server?</label>
+<select name="Activity Level">
+<option>Very Active</option>
+<option>Moderately Active</option>
+<option>Low Activity</option>
+<option>Just Starting</option>
+</select>
 
-<textarea name="Goals" placeholder="What would you like help improving?"></textarea>
+<label>What problems does your server currently have?</label>
+<textarea name="Problems"></textarea>
 
-<button type="submit" class="submit-btn">
+<label>What improvements would you like help with?</label>
+<textarea name="Goals"></textarea>
+
+<label>Extra details</label>
+<textarea name="Extra"></textarea>
+
+<button class="submit-btn" type="submit">
 Submit Application
 </button>
 
@@ -296,7 +349,28 @@ Submit Application
 
 </section>
 
-<section id="contact" class="contact">
+<section id="reviews">
+
+<h2>Server Reviews</h2>
+
+<div class="review">
+<strong>Galaxy Hub</strong> ⭐⭐⭐⭐⭐  
+<p>“Our server structure is way cleaner now. New members can actually find things.”</p>
+</div>
+
+<div class="review">
+<strong>Creator Network</strong> ⭐⭐⭐⭐⭐  
+<p>“The onboarding and channel layout improved massively.”</p>
+</div>
+
+<div class="review">
+<strong>Nightfall Gaming</strong> ⭐⭐⭐⭐☆  
+<p>“Great advice on roles and community structure.”</p>
+</div>
+
+</section>
+
+<section id="contact">
 
 <h2>Contact</h2>
 
@@ -304,7 +378,32 @@ Submit Application
 
 <br>
 
-<a class="button" href="https://discord.gg/5GxyRnpCbQ">Join My Server</a>
+<a class="button" href="https://discord.gg/5GxyRnpCbQ">
+Join My Server
+</a>
+
+</section>
+
+<section>
+
+<h2>Private Admin Panel</h2>
+
+<input id="codeInput" placeholder="Enter admin code">
+<button class="button" onclick="unlock()">Enter</button>
+
+<br><br>
+
+<div id="privatePanel">
+
+<h3>Admin Dashboard</h3>
+
+<ul>
+<li>Check server review applications</li>
+<li>Track active consulting clients</li>
+<li>Manage server reviews</li>
+</ul>
+
+</div>
 
 </section>
 
@@ -313,6 +412,25 @@ Submit Application
 © 2026 Cavanagh Server Consulting
 
 </footer>
+
+<script>
+
+function unlock(){
+
+var code=document.getElementById("codeInput").value;
+
+if(code==="191232"){
+document.getElementById("privatePanel").style.display="block";
+alert("Access granted");
+}
+
+else{
+alert("Incorrect code");
+}
+
+}
+
+</script>
 
 </body>
 </html>
